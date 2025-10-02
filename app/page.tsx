@@ -4,6 +4,8 @@ import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Sparkles } from "lucide-react"
 
+export const MAIN_PAGE_NAV_COUNT = 1
+
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   const [floatingSweets, setFloatingSweets] = useState<
@@ -78,23 +80,9 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl w-full">
-          {/* Cupcake Tower */}
-          <Link href="/cupcakes" className="group relative transform hover:scale-105 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-400/40 to-rose-400/40 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <div className="relative bg-gradient-to-br from-pink-50/95 to-rose-50/95 backdrop-blur-md border-4 border-pink-300 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-pink-300/40 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-rose-300/40 rounded-full blur-3xl" />
-              <div className="text-7xl mb-6 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-500">
-                🧁
-              </div>
-              <h3 className="text-4xl font-bold mb-4 text-balance text-pink-700">Cupcake Tower</h3>
-              <p className="text-pink-600/90 text-xl leading-relaxed">Stack of sweet memories to unwrap</p>
-            </div>
-          </Link>
-
+        <div className="grid grid-cols-1 place-items-center max-w-3xl w-full mx-auto">
           {/* Bubble Tea */}
-          <Link href="/bubbletea" className="group relative transform hover:scale-105 transition-all duration-500">
+          <Link href="/bubbletea" className="group relative transform hover:scale-105 transition-all duration-500 w-full">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-400/40 to-fuchsia-400/40 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
             <div className="relative bg-gradient-to-br from-purple-50/95 to-fuchsia-50/95 backdrop-blur-md border-4 border-purple-300 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
               <div className="absolute top-0 left-0 w-40 h-40 bg-purple-300/40 rounded-full blur-3xl" />
@@ -104,60 +92,6 @@ export default function Home() {
               </div>
               <h3 className="text-4xl font-bold mb-4 text-balance text-purple-700">Bubble Tea</h3>
               <p className="text-purple-600/90 text-xl leading-relaxed">Pop bubbles to reveal our moments</p>
-            </div>
-          </Link>
-
-          {/* Cookie Jar */}
-          <Link href="/cookies" className="group relative transform hover:scale-105 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-amber-400/40 to-orange-400/40 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <div className="relative bg-gradient-to-br from-amber-50/95 to-orange-50/95 backdrop-blur-md border-4 border-amber-300 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-amber-300/40 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-orange-300/40 rounded-full blur-3xl" />
-              <div className="text-7xl mb-6 group-hover:scale-110 group-hover:rotate-[-12deg] transition-transform duration-500">
-                🍪
-              </div>
-              <h3 className="text-4xl font-bold mb-4 text-balance text-amber-700">Cookie Jar</h3>
-              <p className="text-amber-600/90 text-xl leading-relaxed">Grab a cookie, find a surprise</p>
-            </div>
-          </Link>
-
-          {/* Ice Cream Parlor */}
-          <Link href="/icecream" className="group relative transform hover:scale-105 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/40 to-blue-400/40 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <div className="relative bg-gradient-to-br from-cyan-50/95 to-blue-50/95 backdrop-blur-md border-4 border-cyan-300 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 left-0 w-40 h-40 bg-cyan-300/40 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-blue-300/40 rounded-full blur-3xl" />
-              <div className="text-7xl mb-6 group-hover:scale-110 transition-transform duration-500">🍦</div>
-              <h3 className="text-4xl font-bold mb-4 text-balance text-cyan-700">Ice Cream Parlor</h3>
-              <p className="text-cyan-600/90 text-xl leading-relaxed">Scoop up 300 frozen memories</p>
-            </div>
-          </Link>
-
-          {/* Candy Hearts */}
-          <Link href="/hearts" className="group relative transform hover:scale-105 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-400/40 to-pink-400/40 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <div className="relative bg-gradient-to-br from-rose-50/95 to-pink-50/95 backdrop-blur-md border-4 border-rose-300 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-rose-300/40 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-40 h-40 bg-pink-300/40 rounded-full blur-3xl" />
-              <div className="text-7xl mb-6 group-hover:scale-110 animate-pulse-heart transition-transform duration-500">
-                💖
-              </div>
-              <h3 className="text-4xl font-bold mb-4 text-balance text-rose-700">Candy Hearts</h3>
-              <p className="text-rose-600/90 text-xl leading-relaxed">Sweet messages just for you</p>
-            </div>
-          </Link>
-
-          {/* Lollipop Garden */}
-          <Link href="/lollipops" className="group relative transform hover:scale-105 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-violet-400/40 to-purple-400/40 rounded-[2.5rem] blur-2xl group-hover:blur-3xl transition-all duration-500 opacity-0 group-hover:opacity-100" />
-            <div className="relative bg-gradient-to-br from-violet-50/95 to-purple-50/95 backdrop-blur-md border-4 border-violet-300 rounded-[2.5rem] p-10 hover:shadow-2xl transition-all duration-500 overflow-hidden">
-              <div className="absolute top-0 left-0 w-40 h-40 bg-violet-300/40 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-300/40 rounded-full blur-3xl" />
-              <div className="text-7xl mb-6 group-hover:scale-110 group-hover:rotate-180 transition-transform duration-700">
-                🍭
-              </div>
-              <h3 className="text-4xl font-bold mb-4 text-balance text-violet-700">Lollipop Garden</h3>
-              <p className="text-violet-600/90 text-xl leading-relaxed">Pick a lollipop, taste a memory</p>
             </div>
           </Link>
         </div>
